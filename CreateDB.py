@@ -16,7 +16,7 @@ cursor = conn.cursor()
 # cursor.execute(sql)
 # print("Database created successfully........")
 
-# cursor.execute("ALTER TABLE Transactions RENAME COLUMN date_of_birth TO transaction_date")
+# cursor.execute("ALTER TABLE Transactions RENAME COLUMN tsx_amount TO txn_amount")
 
 # #Creating table as per requirement
 # sql ='''CREATE TABLE Transactions(
@@ -51,19 +51,19 @@ cursor = conn.cursor()
 #  )'''
 # cursor.execute(sql)
 # sql ='''INSERT INTO Transactions
-# VALUES ('12', 'credit', '10', '2022-12-02 14:01:10','1'
+# VALUES ('12', 'credit', '10', '2022-12-02 14:01:10','2'
 #  )'''
 # cursor.execute(sql)
 # sql ='''INSERT INTO Transactions
-# VALUES ('13', 'debit', '15', '2022-12-02 14:01:10','1'
+# VALUES ('13', 'debit', '15', '2022-12-02 14:01:10','2'
 #  )'''
 # cursor.execute(sql)
 # sql ='''INSERT INTO Transactions
-# VALUES ('14', 'credit', '20', '2022-12-02 14:01:10','1'
+# VALUES ('14', 'credit', '20', '2022-12-02 14:01:10','3'
 #  )'''
 # cursor.execute(sql)
 # sql ='''INSERT INTO Transactions
-# VALUES ('15', 'debit', '10', '2022-12-01 14:01:10','1'
+# VALUES ('15', 'debit', '10', '2022-12-01 14:01:10','3'
 #  )'''
 # sql = "select txn_type from Transactions"
 # cursor.execute(sql)
