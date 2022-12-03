@@ -17,6 +17,12 @@ def calculate_savings(events):
         cursor = conn.cursor()
 
         #query to get the age and avg savings
+        # 1) we get Customer ID,txn type,txn amount from transactions table if the transaction_date matches the events date
+        # 2) we get total(txn_amount is set as positive or negative based on the txn_type ie. positive for credit and negative for debit)
+        # 3) we get savings(sum of total) for each unique Customer ID
+        # 4) we get date of birth from customer table if both foreign key and primary key match
+        # 5) we get age from DOB 
+        # 6) we get average of savings for each unique age
         sql = """select t.age,CAST (AVG(t.total) AS INTEGER) from
           (select t.total, date_part('year',age(DOB)) :: int as age from 
             (select DATE(c.date_of_birth) AS DOB, t.customer_id, t.total from
